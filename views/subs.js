@@ -81,7 +81,7 @@ function groupCard(group, items, accounts, money) {
   const sorted = items.slice().sort(byMonthlyThenName);
   return el(
     "div",
-    { class: "card" },
+    { class: "card dx-card" },
     el(
       "div",
       { class: "card-head" },
@@ -109,7 +109,7 @@ function totalCard(subs, money) {
   const reviewSum = fmt.sumKnown(withReview.map(monthlyEq));
   return el(
     "div",
-    { class: "card" },
+    { class: "card dx-card" },
     el("div", { class: "label" }, "Monthly equivalent (active)"),
     el("div", { class: "stat-big num" }, money(activeSum.total)),
     el("p", { class: "muted small" }, activeCountLine(active.length, activeSum.unknown)),
@@ -121,7 +121,7 @@ function totalCard(subs, money) {
 export function render(root, data, ctx) {
   const subs = subscriptionsOf(data);
   if (subs.length === 0) {
-    root.replaceChildren(el("div", { class: "card empty" }, el("p", { class: "muted" }, "No subscriptions in finance.json.")));
+    root.replaceChildren(el("div", { class: "card dx-card empty" }, el("p", { class: "muted" }, "No subscriptions in finance.json.")));
     return;
   }
   const money = ctx.money;

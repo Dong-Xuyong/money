@@ -38,7 +38,7 @@ function basisCard(budget, ctx) {
   const basis = typeof budget.basis === "string" && budget.basis !== "" ? budget.basis : null;
   return el(
     "div",
-    { class: "card" },
+    { class: "card dx-card" },
     el("div", { class: "label" }, "Reference income"),
     el("div", { class: "stat-value num" }, income),
     basis ? el("p", { class: "muted small" }, basis) : null
@@ -106,7 +106,7 @@ function bucketsCard(buckets, ctx) {
       )
     );
   }
-  return el("div", { class: "card" }, children);
+  return el("div", { class: "card dx-card" }, children);
 }
 
 function sortedOneOffs(oneOffs) {
@@ -150,7 +150,7 @@ function oneOffsCard(oneOffs, ctx) {
       el("p", { class: "muted small num" }, "Total " + ctx.money(sum.total) + unknownNote(sum.unknown))
     );
   }
-  return el("div", { class: "card" }, children);
+  return el("div", { class: "card dx-card" }, children);
 }
 
 export function render(root, data, ctx) {

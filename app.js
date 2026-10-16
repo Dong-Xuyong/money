@@ -148,7 +148,7 @@ function renderChrome() {
   err.hidden = !state.error || !connected;
   $("load-error-text").textContent = state.error || "";
 
-  for (const btn of document.querySelectorAll(".tabs-btn")) {
+  for (const btn of document.querySelectorAll(".dx-tab")) {
     if (btn.dataset.view === currentViewId()) btn.setAttribute("aria-current", "page");
     else btn.removeAttribute("aria-current");
   }
@@ -187,7 +187,7 @@ async function renderView() {
     root.replaceChildren(
       el(
         "div",
-        { class: "card notice notice-error" },
+        { class: "card dx-card notice notice-error" },
         el("h2", { class: "card-title" }, "This view failed to render"),
         el("p", { class: "muted" }, String((err && err.message) || err))
       )
@@ -203,8 +203,8 @@ function openSettings(open) {
 }
 
 function bind() {
-  $("tabs-track").replaceChildren(
-    ...VIEWS.map((v) => el("a", { class: "tabs-btn", href: "#" + v.id, dataset: { view: v.id } }, v.label))
+  $("tabs").replaceChildren(
+    ...VIEWS.map((v) => el("a", { class: "dx-tab", href: "#" + v.id, dataset: { view: v.id } }, v.label))
   );
   for (const v of VIEWS) {
     $("views").append(el("section", { id: "view-" + v.id, class: "view", dataset: { view: v.id }, "aria-label": v.label, hidden: true }));

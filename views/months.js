@@ -32,7 +32,7 @@ export function render(root, data, ctx) {
   const { el, fmt } = ctx;
   const months = monthEntries(data);
   if (!months.length) {
-    root.replaceChildren(el("div", { class: "card empty" }, el("p", { class: "muted" }, "No months in finance.json yet.")));
+    root.replaceChildren(el("div", { class: "card dx-card empty" }, el("p", { class: "muted" }, "No months in finance.json yet.")));
     return;
   }
 
@@ -62,7 +62,7 @@ export function render(root, data, ctx) {
   const summary = summaryCard(el, fmt, ctx, data, selected);
   const chart = chartCard(el, fmt, ctx, months, selected, select);
 
-  root.replaceChildren(el("div", { class: "card" }, el("div", { class: "chips" }, chips)), summary, chart);
+  root.replaceChildren(el("div", { class: "card dx-card" }, el("div", { class: "chips" }, chips)), summary, chart);
   if (selectedChip) selectedChip.scrollIntoView({ block: "nearest", inline: "nearest" });
 }
 
@@ -90,7 +90,7 @@ function summaryCard(el, fmt, ctx, data, month) {
 
   return el(
     "div",
-    { class: "card" },
+    { class: "card dx-card" },
     el(
       "div",
       { class: "card-head" },
@@ -162,7 +162,7 @@ function chartCard(el, fmt, ctx, months, selected, select) {
 
   return el(
     "div",
-    { class: "card" },
+    { class: "card dx-card" },
     el("h2", { class: "card-title" }, "In vs out"),
     el("div", { class: "bars" }, columns),
     el(

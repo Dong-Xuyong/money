@@ -32,5 +32,5 @@ function append(node, children) {
 
 /** Placeholder card used by the view stubs and by empty sections. */
 export function placeholder(title, text) {
-  return el("div", { class: "card empty" }, el("h2", { class: "card-title" }, title), el("p", { class: "muted" }, text));
+  return el("div", { class: "card dx-card empty" }, el("h2", { class: "card-title" }, title), el("p", { class: "muted" }, text));
 }

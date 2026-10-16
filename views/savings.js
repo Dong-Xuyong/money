@@ -18,7 +18,7 @@ function emergencyCard(ef, ctx) {
   const note = typeof ef.note === "string" && ef.note !== "" ? ef.note : null;
   return el(
     "div",
-    { class: "card" },
+    { class: "card dx-card" },
     el("h2", { class: "card-title" }, "Emergency fund"),
     el(
       "div",
@@ -61,7 +61,7 @@ function targetCard(ef, target, ctx) {
       : null;
   return el(
     "div",
-    { class: "card" },
+    { class: "card dx-card" },
     el("div", { class: "label" }, "Monthly savings target"),
     el("div", { class: "stat-value num" }, value),
     pace ? el("p", { class: "muted small" }, pace) : null
@@ -72,7 +72,7 @@ function balancesCard(data, ctx) {
   const accounts = Array.isArray(data?.accounts) ? data.accounts : [];
   return el(
     "div",
-    { class: "card" },
+    { class: "card dx-card" },
     el("h2", { class: "card-title" }, "Balances"),
     accounts.length
       ? el(
