@@ -15,9 +15,6 @@ html.dark {
 }
 
 body.dx {
-  /* Names from the app contract, fed by the kit's --dx-fg / --dx-primary. */
-  --dx-text: var(--dx-fg);
-  --dx-accent: var(--dx-primary);
   background: transparent;
   color: var(--dx-text);
   font-family: var(--dx-font);
@@ -457,19 +454,16 @@ code {
 .table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
-  table-layout: fixed;
+  font-size: 0.82rem;
 }
 
 .table th,
 .table td {
-  padding: 0.45rem 0.2rem;
+  padding: 0.45rem 0.15rem;
   text-align: right;
   border-top: 1px solid var(--dx-border);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .table th:first-child,
