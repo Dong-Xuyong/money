@@ -1,0 +1,248 @@
+{
+ "app": "finance",
+ "version": 1,
+ "updatedAt": "2026-10-16T10:05:00+01:00",
+ "currency": "EUR",
+ "owner": "Example owner",
+ "sources": [
+  {
+   "id": "revolut",
+   "name": "Example name",
+   "coverageFrom": "2022-02-01",
+   "coverageTo": "2026-10-13"
+  },
+  {
+   "id": "novobanco",
+   "name": "Example name",
+   "coverageFrom": "2026-04-05",
+   "coverageTo": "2026-10-05"
+  }
+ ],
+ "accounts": [
+  {
+   "id": "novobanco",
+   "name": "Novo Banco",
+   "balance": 125.26,
+   "balanceAt": "2026-10-05"
+  },
+  {
+   "id": "revolut",
+   "name": "Revolut",
+   "balance": null,
+   "balanceAt": null
+  }
+ ],
+ "months": [
+  {
+   "month": "2026-04",
+   "partial": true,
+   "accounts": {
+    "novobanco": {
+     "in": 763.45,
+     "out": 688.58,
+     "net": 233.29
+    },
+    "revolut": {
+     "in": null,
+     "out": 448.41,
+     "net": null
+    }
+   },
+   "combined": {
+    "in": 407.29,
+    "out": 588.18,
+    "net": 710.91
+   },
+   "notes": [
+    "Example notes",
+    "Example notes",
+    "Example notes"
+   ]
+  },
+  {
+   "month": "2026-05",
+   "partial": false,
+   "accounts": {
+    "novobanco": {
+     "in": 89.0,
+     "out": 30.37,
+     "net": 753.01
+    },
+    "revolut": {
+     "in": null,
+     "out": 392.33,
+     "net": null
+    }
+   },
+   "combined": {
+    "in": 687.24,
+    "out": 6.88,
+    "net": 403.62
+   },
+   "notes": [
+    "Example notes",
+    "Example notes"
+   ]
+  },
+  {
+   "month": "2026-06",
+   "partial": false,
+   "accounts": {
+    "novobanco": {
+     "in": 650.78,
+     "out": 209.74,
+     "net": 851.02
+    },
+    "revolut": {
+     "in": null,
+     "out": 811.78,
+     "net": null
+    }
+   },
+   "combined": {
+    "in": 32.38,
+    "out": 27.77,
+    "net": 489.56
+   },
+   "notes": [
+    "Example notes",
+    "Example notes"
+   ]
+  },
+  {
+   "month": "2026-07",
+   "partial": false,
+   "accounts": {
+    "novobanco": {
+     "in": 845.54,
+     "out": 346.18,
+     "net": 198.86
+    },
+    "revolut": {
+     "in": null,
+     "out": 382.79,
+     "net": null
+    }
+   },
+   "combined": {
+    "in": 30.99,
+    "out": 203.41,
+    "net": 396.91
+   },
+   "notes": [
+    "Example notes",
+    "Example notes"
+   ]
+  }
+ ],
+ "subscriptions": [
+  {
+   "id": "sub_cursor",
+   "name": "Example name",
+   "account": "revolut",
+   "amount": 448.75,
+   "cadence": "monthly",
+   "lastCharged": "2026-09-16",
+   "nextDue": null,
+   "status": "active",
+   "note": "Example note"
+  },
+  {
+   "id": "sub_tribute",
+   "name": "Example name",
+   "account": "revolut",
+   "amount": 213.61,
+   "cadence": "monthly",
+   "lastCharged": "2026-10-06",
+   "nextDue": "2026-11-06",
+   "status": "active",
+   "note": "Example note"
+  },
+  {
+   "id": "sub_h3",
+   "name": "Example name",
+   "account": "revolut",
+   "amount": 211.63,
+   "cadence": "weekly",
+   "lastCharged": "2026-10-10",
+   "nextDue": null,
+   "status": "review",
+   "note": "Example note"
+  },
+  {
+   "id": "sub_netease",
+   "name": "Example name",
+   "account": "revolut",
+   "amount": 200.81,
+   "cadence": "monthly",
+   "lastCharged": "2026-09-08",
+   "nextDue": null,
+   "status": "active",
+   "note": "Example note"
+  }
+ ],
+ "recurring": [
+  {
+   "id": "rec_family",
+   "name": "Example name",
+   "type": "family",
+   "account": "novobanco",
+   "amount": 416.35,
+   "cadence": "monthly",
+   "lastCharged": "2026-09-27",
+   "status": "active",
+   "note": "Example note"
+  }
+ ],
+ "savings": {
+  "emergencyFund": {
+   "goal": 3000,
+   "current": 24.23,
+   "currentAt": "2026-10-05",
+   "note": "Example note"
+  },
+  "monthlyTarget": 754.63
+ },
+ "budget": {
+  "basis": "Example basis",
+  "monthlyIncomeRef": 503.03,
+  "buckets": [
+   {
+    "id": "growth",
+    "name": "Example name",
+    "pct": 25,
+    "amount": 579.85
+   },
+   {
+    "id": "stability",
+    "name": "Example name",
+    "pct": 15,
+    "amount": 171.39
+   },
+   {
+    "id": "essentials",
+    "name": "Example name",
+    "pct": 50,
+    "amount": 893.33
+   },
+   {
+    "id": "rewards",
+    "name": "Example name",
+    "pct": 10,
+    "amount": 774.65
+   }
+  ],
+  "oneOffs": [
+   {
+    "date": "2026-05-27",
+    "label": "Example label",
+    "amount": 113.2
+   },
+   {
+    "date": "2026-09-07",
+    "label": "Example label",
+    "amount": 302.76
+   }
+  ]
+ }
+}

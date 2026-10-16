@@ -1,0 +1,52 @@
+{
+ "app": "finance",
+ "version": 1,
+ "updatedAt": "2026-10-16T10:05:00+01:00",
+ "currency": "EUR",
+ "owner": "Example owner",
+ "sources": [],
+ "accounts": [
+  { "id": "novobanco", "name": "Novo Banco", "balance": null, "balanceAt": null },
+  { "id": "revolut", "name": "Revolut", "balance": 0, "balanceAt": "2026-10-13" }
+ ],
+ "months": [
+  {
+   "month": "2026-08",
+   "partial": false,
+   "accounts": {
+    "novobanco": { "in": 0, "out": 12.5, "net": -12.5 },
+    "revolut": { "in": null, "out": null, "net": null }
+   },
+   "combined": { "in": null, "out": 12.5, "net": null },
+   "notes": []
+  },
+  {
+   "month": "2026-09",
+   "partial": true,
+   "accounts": {
+    "novobanco": { "in": 100, "out": 250.75, "net": -150.75 }
+   },
+   "combined": { "in": null, "out": null, "net": null }
+  }
+ ],
+ "subscriptions": [
+  { "id": "sub_a", "name": "Example unknown amount", "account": "revolut", "amount": null, "cadence": "monthly", "lastCharged": null, "nextDue": null, "status": "active", "note": "" },
+  { "id": "sub_b", "name": "Example yearly", "account": "novobanco", "amount": 120, "cadence": "yearly", "lastCharged": "2026-01-10", "nextDue": "2027-01-10", "status": "active", "note": "Example note" },
+  { "id": "sub_c", "name": "Example odd cadence", "account": "revolut", "amount": 9.99, "cadence": "per-use", "lastCharged": "2026-09-30", "nextDue": null, "status": "review", "note": "Example note" },
+  { "id": "sub_d", "name": "Example ended", "account": "revolut", "amount": 4.99, "cadence": "monthly", "lastCharged": "2026-03-01", "nextDue": null, "status": "ended", "note": "Example note" }
+ ],
+ "recurring": [],
+ "savings": {
+  "emergencyFund": { "goal": 3000, "current": null, "currentAt": null, "note": "Example note" },
+  "monthlyTarget": null
+ },
+ "budget": {
+  "basis": "Example basis",
+  "monthlyIncomeRef": null,
+  "buckets": [
+   { "id": "essentials", "name": "Example essentials", "pct": 50, "amount": null },
+   { "id": "growth", "name": "Example growth", "pct": null, "amount": 100 }
+  ],
+  "oneOffs": []
+ }
+}
