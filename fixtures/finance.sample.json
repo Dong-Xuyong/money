@@ -8,7 +8,7 @@
   {
    "id": "revolut",
    "name": "Example name",
-   "coverageFrom": "2022-02-01",
+   "coverageFrom": "2026-04-01",
    "coverageTo": "2026-10-13"
   },
   {
@@ -137,7 +137,7 @@
  ],
  "subscriptions": [
   {
-   "id": "sub_cursor",
+   "id": "sub_example_a",
    "name": "Example name",
    "account": "revolut",
    "amount": 448.75,
@@ -148,7 +148,7 @@
    "note": "Example note"
   },
   {
-   "id": "sub_tribute",
+   "id": "sub_example_b",
    "name": "Example name",
    "account": "revolut",
    "amount": 213.61,
@@ -159,7 +159,7 @@
    "note": "Example note"
   },
   {
-   "id": "sub_h3",
+   "id": "sub_example_c",
    "name": "Example name",
    "account": "revolut",
    "amount": 211.63,
@@ -170,7 +170,7 @@
    "note": "Example note"
   },
   {
-   "id": "sub_netease",
+   "id": "sub_example_d",
    "name": "Example name",
    "account": "revolut",
    "amount": 200.81,
@@ -183,9 +183,9 @@
  ],
  "recurring": [
   {
-   "id": "rec_family",
+   "id": "rec_example",
    "name": "Example name",
-   "type": "family",
+   "type": "example",
    "account": "novobanco",
    "amount": 416.35,
    "cadence": "monthly",
