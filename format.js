@@ -62,11 +62,14 @@ function parseIsoDate(iso) {
   return Number.isNaN(d.getTime()) ? null : d;
 }
 
+// Fixed names: en-IE in Chrome abbreviates September as "Sept", other engines as "Sep".
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 /** date("2026-10-05") -> "5 Oct 2026"; date(null) -> "—". */
 export function date(iso) {
   const d = parseIsoDate(iso);
   if (!d) return DASH;
-  return d.toLocaleDateString(LOCALE, { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+  return d.getUTCDate() + " " + MONTHS[d.getUTCMonth()] + " " + d.getUTCFullYear();
 }
 
 /** dateTime("2026-10-16T10:05:00+01:00") -> local "16 Oct 2026, 10:05"; invalid -> "—". */
@@ -80,9 +83,9 @@ export function dateTime(iso) {
 /** monthLabel("2026-07") -> "Jul 2026"; monthLabel("2026-07", { short: true }) -> "Jul". */
 export function monthLabel(ym, { short = false } = {}) {
   const m = typeof ym === "string" ? /^(\d{4})-(\d{2})$/.exec(ym) : null;
-  if (!m) return DASH;
-  const d = new Date(Date.UTC(+m[1], +m[2] - 1, 1));
-  return d.toLocaleDateString(LOCALE, short ? { month: "short", timeZone: "UTC" } : { month: "short", year: "numeric", timeZone: "UTC" });
+  const name = m ? MONTHS[+m[2] - 1] : undefined;
+  if (!name) return DASH;
+  return short ? name : name + " " + m[1];
 }
 
 const PER_MONTH = {

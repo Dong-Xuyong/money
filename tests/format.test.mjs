@@ -26,6 +26,9 @@ test("dates and months", () => {
   assert.equal(f.monthLabel("2026-07"), "Jul 2026");
   assert.equal(f.monthLabel("2026-07", { short: true }), "Jul");
   assert.equal(f.monthLabel("bad"), f.DASH);
+  assert.equal(f.monthLabel("2026-13"), f.DASH);
+  assert.equal(f.monthLabel("2026-09"), "Sep 2026");
+  assert.equal(f.date("2026-09-16"), "16 Sep 2026");
 });
 
 test("monthlyEquivalent", () => {
