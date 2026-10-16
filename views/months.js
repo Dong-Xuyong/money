@@ -85,9 +85,8 @@ function summaryCard(el, fmt, ctx, data, month) {
     accountRows.push(accountRow(el, ctx, fmt, id, flows[id]));
   }
 
-  const notes = Array.isArray(month.notes) && month.notes.length
-    ? el("ul", { class: "note-list" }, month.notes.map((note) => el("li", {}, note == null ? "" : String(note))))
-    : null;
+  const noteTexts = Array.isArray(month.notes) ? month.notes.filter((note) => typeof note === "string" && note !== "") : [];
+  const notes = noteTexts.length ? el("ul", { class: "note-list" }, noteTexts.map((note) => el("li", {}, note))) : null;
 
   return el(
     "div",

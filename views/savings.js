@@ -85,7 +85,8 @@ function balancesCard(data, ctx) {
 }
 
 function balanceRow(account, ctx) {
-  const name = account.name == null ? fmt.DASH : account.name;
+  const name =
+    typeof account.name === "string" && account.name !== "" ? account.name : account.id != null ? String(account.id) : fmt.DASH;
   return el(
     "li",
     { class: "row" },

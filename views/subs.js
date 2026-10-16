@@ -55,7 +55,7 @@ function statusBadge(status) {
 
 function monthlyHint(sub, money) {
   const eq = monthlyEq(sub);
-  if (sub.cadence === "monthly" && fmt.isNum(eq)) return null;
+  if (String(sub.cadence || "").toLowerCase() === "monthly" && fmt.isNum(eq)) return null;
   return el("span", { class: "muted small num" }, fmt.isNum(eq) ? "≈ " + money(eq) + "/mo" : fmt.DASH + "/mo");
 }
 
@@ -105,7 +105,7 @@ function activeCountLine(count, unknown) {
 function totalCard(subs, money) {
   const active = subs.filter((sub) => sub.status === "active");
   const activeSum = fmt.sumKnown(active.map(monthlyEq));
-  const withReview = subs.filter((sub) => sub.status === "active" || sub.status === "review");
+  const withReview = subs.filter((sub) => groupId(sub.status) !== "ended");
   const reviewSum = fmt.sumKnown(withReview.map(monthlyEq));
   return el(
     "div",
@@ -121,7 +121,7 @@ function totalCard(subs, money) {
 export function render(root, data, ctx) {
   const subs = subscriptionsOf(data);
   if (subs.length === 0) {
-    root.replaceChildren(el("div", { class: "card empty" }, "No subscriptions in finance.json."));
+    root.replaceChildren(el("div", { class: "card empty" }, el("p", { class: "muted" }, "No subscriptions in finance.json.")));
     return;
   }
   const money = ctx.money;
